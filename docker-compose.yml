@@ -1,0 +1,12 @@
+version: '0.1'
+services:
+  floating-ip:
+    image: osixia/keepalived:latest
+    #ports:
+    #- "8444:8444"
+    volumes:
+    - ./template/keepalived.conf:/usr/local/etc/keepalived/keepalived.conf
+    cap_add:
+    - NET_ADMIN
+    net: "host"
+
